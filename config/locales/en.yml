@@ -14,7 +14,7 @@ en:
           employee_id: "员工"
           basic: "基本工资"
           post: "岗位工资"
-          compensation: "基本工资"
+          compensation: "补偿金"
           seniority_allowance: "工龄补助"
           communication_allowance: "通讯补助"
           accommodation_allowance: "房屋补助"
