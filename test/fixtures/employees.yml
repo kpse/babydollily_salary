@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  number: MyString
+  name: MyString
+  line_of_business: MyString
+  dug: MyString
+  du: MyString
+  post: MyString
+  duty: MyString
+  charge_area: MyString
+  client_rank: MyString
+
+two:
+  number: MyString
+  name: MyString
+  line_of_business: MyString
+  dug: MyString
+  du: MyString
+  post: MyString
+  duty: MyString
+  charge_area: MyString
+  client_rank: MyString
