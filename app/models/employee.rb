@@ -8,6 +8,7 @@ class Employee < ActiveRecord::Base
   accepts_nested_attributes_for :wage, :bonus, :adjustment
 
   validates_presence_of :number, :name
+  validates_uniqueness_of :number
 
   def full_name
     "#{name}(#{number})"
