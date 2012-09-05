@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120905134419) do
+ActiveRecord::Schema.define(:version => 20120905145313) do
 
   create_table "adjustments", :force => true do |t|
     t.integer  "employee_id"
@@ -27,16 +27,6 @@ ActiveRecord::Schema.define(:version => 20120905134419) do
     t.decimal  "oct"
     t.decimal  "nov"
     t.decimal  "dec"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  create_table "bouns", :force => true do |t|
-    t.integer  "employee_id"
-    t.decimal  "project"
-    t.decimal  "annual"
-    t.decimal  "granted_at"
-    t.string   "sponsor"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

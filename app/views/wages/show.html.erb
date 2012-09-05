@@ -1,0 +1,41 @@
+<%- model_class = Wage -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:employee_id) %>:</strong></dt>
+  <dd><%= @wage.employee_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:basic) %>:</strong></dt>
+  <dd><%= @wage.basic %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:post) %>:</strong></dt>
+  <dd><%= @wage.post %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:compensation) %>:</strong></dt>
+  <dd><%= @wage.compensation %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:seniority_allowance) %>:</strong></dt>
+  <dd><%= @wage.seniority_allowance %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:communication_allowance) %>:</strong></dt>
+  <dd><%= @wage.communication_allowance %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:accommodation_allowance) %>:</strong></dt>
+  <dd><%= @wage.accommodation_allowance %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:transportation_allowance) %>:</strong></dt>
+  <dd><%= @wage.transportation_allowance %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:monthly_wages_standard) %>:</strong></dt>
+  <dd><%= @wage.monthly_wages_standard %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:travel_allowance) %>:</strong></dt>
+  <dd><%= @wage.travel_allowance %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:monthly_total) %>:</strong></dt>
+  <dd><%= @wage.monthly_total %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              wages_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_wage_path(@wage), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              wage_path(@wage),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

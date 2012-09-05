@@ -1,4 +1,8 @@
 Salary::Application.routes.draw do
+  resources :adjustments
+
+  resources :wages
+
   resources :employees
 
   # The priority is based upon order of creation:

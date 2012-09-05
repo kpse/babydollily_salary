@@ -1,0 +1,56 @@
+<%- model_class = Wage -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:employee_id) %></th>
+      <th><%= model_class.human_attribute_name(:basic) %></th>
+      <th><%= model_class.human_attribute_name(:post) %></th>
+      <th><%= model_class.human_attribute_name(:compensation) %></th>
+      <th><%= model_class.human_attribute_name(:seniority_allowance) %></th>
+      <th><%= model_class.human_attribute_name(:communication_allowance) %></th>
+      <th><%= model_class.human_attribute_name(:accommodation_allowance) %></th>
+      <th><%= model_class.human_attribute_name(:transportation_allowance) %></th>
+      <th><%= model_class.human_attribute_name(:monthly_wages_standard) %></th>
+      <th><%= model_class.human_attribute_name(:travel_allowance) %></th>
+      <th><%= model_class.human_attribute_name(:monthly_total) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @wages.each do |wage| %>
+      <tr>
+        <td><%= link_to wage.id, wage_path(wage) %></td>
+        <td><%= wage.employee_id %></td>
+        <td><%= wage.basic %></td>
+        <td><%= wage.post %></td>
+        <td><%= wage.compensation %></td>
+        <td><%= wage.seniority_allowance %></td>
+        <td><%= wage.communication_allowance %></td>
+        <td><%= wage.accommodation_allowance %></td>
+        <td><%= wage.transportation_allowance %></td>
+        <td><%= wage.monthly_wages_standard %></td>
+        <td><%= wage.travel_allowance %></td>
+        <td><%= wage.monthly_total %></td>
+        <td><%=l wage.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_wage_path(wage), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      wage_path(wage),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_wage_path,
+            :class => 'btn btn-primary' %>
