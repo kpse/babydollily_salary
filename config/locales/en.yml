@@ -6,8 +6,8 @@ en:
   activerecord:
       models:
         wage: "工资"
-        employee: "员工"
-        adjustment: "薪资调整"
+        employee: "员工信息"
+        adjustment: "薪资调整历史"
         bonus: "奖金"
       attributes:
         wage:
