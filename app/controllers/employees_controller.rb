@@ -25,6 +25,8 @@ class EmployeesController < ApplicationController
   # GET /employees/new.json
   def new
     @employee = Employee.new
+    @employee.wage = Wage.new
+
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,6 +43,8 @@ class EmployeesController < ApplicationController
   # POST /employees.json
   def create
     @employee = Employee.new(params[:employee])
+    @employee.adjustment = Adjustment.new
+    @employee.bonus = Bonus.new
 
     respond_to do |format|
       if @employee.save

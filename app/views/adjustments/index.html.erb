@@ -1,11 +1,10 @@
 <%- model_class = Adjustment -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:employee_id) %></th>
       <th><%= model_class.human_attribute_name(:jan) %></th>
       <th><%= model_class.human_attribute_name(:feb) %></th>
@@ -25,8 +24,7 @@
   <tbody>
     <% @adjustments.each do |adjustment| %>
       <tr>
-        <td><%= link_to adjustment.id, adjustment_path(adjustment) %></td>
-        <td><%= adjustment.employee.name %></td>
+        <td><%= link_to adjustment.employee.full_name, edit_adjustment_path(adjustment) %></td>
         <td><%= adjustment.jan %></td>
         <td><%= adjustment.feb %></td>
         <td><%= adjustment.mar %></td>
@@ -41,18 +39,9 @@
         <td><%= adjustment.dec %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_adjustment_path(adjustment), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      adjustment_path(adjustment),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
+                      edit_adjustment_path(adjustment), :class => 'btn btn-primary' %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_adjustment_path,
-            :class => 'btn btn-primary' %>

@@ -1,11 +1,10 @@
 <%- model_class = Bonus -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:employee_id) %></th>
       <th><%= model_class.human_attribute_name(:project) %></th>
       <th><%= model_class.human_attribute_name(:annual) %></th>
@@ -17,26 +16,17 @@
   <tbody>
     <% @bonuses.each do |bonus| %>
       <tr>
-        <td><%= link_to bonus.id, bonus_path(bonus) %></td>
-        <td><%= bonus.employee.name %></td>
+        <td><%= link_to bonus.employee.full_name, edit_bonus_path(bonus) %></td>
         <td><%= bonus.project %></td>
         <td><%= bonus.annual %></td>
         <td><%= bonus.granted_at %></td>
         <td><%= bonus.sponsor %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_bonus_path(bonus), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      bonus_path(bonus),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
+                      edit_bonus_path(bonus), :class => 'btn btn-primary' %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_bonus_path,
-            :class => 'btn btn-primary' %>

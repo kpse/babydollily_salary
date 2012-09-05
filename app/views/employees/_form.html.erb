@@ -54,6 +54,14 @@
     </div>
   </div>
 
+  <%= f.fields_for :wage do |builder| %>
+    <%= render 'wages/wage_fields', f: builder %>
+  <% end %>
+  <%= f.fields_for :bonus do |builder| %>
+  <% end %>
+  <%= f.fields_for :adjustment do |builder| %>
+  <% end %>
+
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

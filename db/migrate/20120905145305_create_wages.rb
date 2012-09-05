@@ -2,16 +2,16 @@ class CreateWages < ActiveRecord::Migration
   def change
     create_table :wages do |t|
       t.integer :employee_id
-      t.decimal :basic
-      t.decimal :post
-      t.decimal :compensation
-      t.decimal :seniority_allowance
-      t.decimal :communication_allowance
-      t.decimal :accommodation_allowance
-      t.decimal :transportation_allowance
-      t.decimal :monthly_wages_standard
-      t.decimal :travel_allowance
-      t.decimal :monthly_total
+      t.decimal :basic, default: 0
+      t.decimal :post, default: 0
+      t.decimal :compensation, default: 0
+      t.decimal :seniority_allowance, default: 0
+      t.decimal :communication_allowance, default: 0
+      t.decimal :accommodation_allowance, default: 0
+      t.decimal :transportation_allowance, default: 0
+      t.decimal :monthly_wages_standard, default: 0
+      t.decimal :travel_allowance, default: 0
+      t.decimal :monthly_total, default: 0
 
       t.timestamps
     end

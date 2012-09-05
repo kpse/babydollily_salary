@@ -1,9 +1,9 @@
 Salary::Application.routes.draw do
-  resources :bonuses
+  resources :bonuses, except: [:destroy]
 
-  resources :adjustments
+  resources :adjustments, except: [:destroy]
 
-  resources :wages
+  resources :wages, except: [:destroy]
 
   resources :employees
 

@@ -1,11 +1,10 @@
 <%- model_class = Employee -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:number) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:line_of_business) %></th>
@@ -21,9 +20,8 @@
   <tbody>
     <% @employees.each do |employee| %>
       <tr>
-        <td><%= link_to employee.id, employee_path(employee) %></td>
-        <td><%= employee.number %></td>
-        <td><%= employee.name %></td>
+        <td><%= link_to employee.number, employee_path(employee) %></td>
+        <td><%= link_to employee.name, employee_path(employee) %></td>
         <td><%= employee.line_of_business %></td>
         <td><%= employee.dug %></td>
         <td><%= employee.du %></td>

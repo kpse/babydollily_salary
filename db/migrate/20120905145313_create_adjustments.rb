@@ -2,18 +2,18 @@ class CreateAdjustments < ActiveRecord::Migration
   def change
     create_table :adjustments do |t|
       t.integer :employee_id
-      t.decimal :jan
-      t.decimal :feb
-      t.decimal :mar
-      t.decimal :apr
-      t.decimal :may
-      t.decimal :jun
-      t.decimal :jul
-      t.decimal :aug
-      t.decimal :sep
-      t.decimal :oct
-      t.decimal :nov
-      t.decimal :dec
+      t.decimal :jan, default: 0
+      t.decimal :feb, default: 0
+      t.decimal :mar, default: 0
+      t.decimal :apr, default: 0
+      t.decimal :may, default: 0
+      t.decimal :jun, default: 0
+      t.decimal :jul, default: 0
+      t.decimal :aug, default: 0
+      t.decimal :sep, default: 0
+      t.decimal :oct, default: 0
+      t.decimal :nov, default: 0
+      t.decimal :dec, default: 0
 
       t.timestamps
     end

@@ -15,30 +15,30 @@ ActiveRecord::Schema.define(:version => 20120905151444) do
 
   create_table "adjustments", :force => true do |t|
     t.integer  "employee_id"
-    t.decimal  "jan"
-    t.decimal  "feb"
-    t.decimal  "mar"
-    t.decimal  "apr"
-    t.decimal  "may"
-    t.decimal  "jun"
-    t.decimal  "jul"
-    t.decimal  "aug"
-    t.decimal  "sep"
-    t.decimal  "oct"
-    t.decimal  "nov"
-    t.decimal  "dec"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.decimal  "jan",         :default => 0.0
+    t.decimal  "feb",         :default => 0.0
+    t.decimal  "mar",         :default => 0.0
+    t.decimal  "apr",         :default => 0.0
+    t.decimal  "may",         :default => 0.0
+    t.decimal  "jun",         :default => 0.0
+    t.decimal  "jul",         :default => 0.0
+    t.decimal  "aug",         :default => 0.0
+    t.decimal  "sep",         :default => 0.0
+    t.decimal  "oct",         :default => 0.0
+    t.decimal  "nov",         :default => 0.0
+    t.decimal  "dec",         :default => 0.0
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "bonuses", :force => true do |t|
     t.integer  "employee_id"
-    t.decimal  "project"
-    t.decimal  "annual"
+    t.decimal  "project",     :default => 0.0
+    t.decimal  "annual",      :default => 0.0
     t.decimal  "granted_at"
-    t.string   "sponsor"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string   "sponsor",     :default => "none"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
   end
 
   create_table "employees", :force => true do |t|
@@ -57,18 +57,18 @@ ActiveRecord::Schema.define(:version => 20120905151444) do
 
   create_table "wages", :force => true do |t|
     t.integer  "employee_id"
-    t.decimal  "basic"
-    t.decimal  "post"
-    t.decimal  "compensation"
-    t.decimal  "seniority_allowance"
-    t.decimal  "communication_allowance"
-    t.decimal  "accommodation_allowance"
-    t.decimal  "transportation_allowance"
-    t.decimal  "monthly_wages_standard"
-    t.decimal  "travel_allowance"
-    t.decimal  "monthly_total"
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
+    t.decimal  "basic",                    :default => 0.0
+    t.decimal  "post",                     :default => 0.0
+    t.decimal  "compensation",             :default => 0.0
+    t.decimal  "seniority_allowance",      :default => 0.0
+    t.decimal  "communication_allowance",  :default => 0.0
+    t.decimal  "accommodation_allowance",  :default => 0.0
+    t.decimal  "transportation_allowance", :default => 0.0
+    t.decimal  "monthly_wages_standard",   :default => 0.0
+    t.decimal  "travel_allowance",         :default => 0.0
+    t.decimal  "monthly_total",            :default => 0.0
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
   end
 
 end
