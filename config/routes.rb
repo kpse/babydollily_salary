@@ -1,4 +1,6 @@
 Salary::Application.routes.draw do
+  resources :bonuses
+
   resources :adjustments
 
   resources :wages
