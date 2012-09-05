@@ -17,7 +17,6 @@
       <th><%= model_class.human_attribute_name(:monthly_wages_standard) %></th>
       <th><%= model_class.human_attribute_name(:travel_allowance) %></th>
       <th><%= model_class.human_attribute_name(:monthly_total) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -25,7 +24,7 @@
     <% @wages.each do |wage| %>
       <tr>
         <td><%= link_to wage.id, wage_path(wage) %></td>
-        <td><%= wage.employee_id %></td>
+        <td><%= wage.employee.name %></td>
         <td><%= wage.basic %></td>
         <td><%= wage.post %></td>
         <td><%= wage.compensation %></td>
@@ -36,7 +35,6 @@
         <td><%= wage.monthly_wages_standard %></td>
         <td><%= wage.travel_allowance %></td>
         <td><%= wage.monthly_total %></td>
-        <td><%=l wage.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_wage_path(wage), :class => 'btn btn-mini' %>

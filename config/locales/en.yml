@@ -30,6 +30,8 @@ en:
           du: "DU"
           post: "岗位"
           duty: "职务"
+          charge_area: "管辖地域"
+          client_rank: "客户定级"
         bonus:
           employee_id: "员工"
           project: "项目奖金"
