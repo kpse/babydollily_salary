@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20120905151444) do
     t.integer  "employee_id"
     t.decimal  "project",     :default => 0.0
     t.decimal  "annual",      :default => 0.0
-    t.decimal  "granted_at"
+    t.datetime "granted_at"
     t.string   "sponsor",     :default => "none"
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false

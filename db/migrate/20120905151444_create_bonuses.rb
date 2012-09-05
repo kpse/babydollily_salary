@@ -4,7 +4,7 @@ class CreateBonuses < ActiveRecord::Migration
       t.integer :employee_id
       t.decimal :project, default: 0
       t.decimal :annual, default: 0
-      t.decimal :granted_at
+      t.datetime :granted_at
       t.string :sponsor, default: "none"
 
       t.timestamps
