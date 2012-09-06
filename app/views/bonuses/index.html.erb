@@ -19,7 +19,7 @@
         <td><%= link_to bonus.employee.full_name, employee_path(bonus.employee) %></td>
         <td><%= bonus.project %></td>
         <td><%= bonus.annual %></td>
-        <td><%= time_output bonus.granted_at %></td>
+        <td><%= date_output bonus.granted_at %></td>
         <td><%= bonus.sponsor %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

@@ -53,7 +53,7 @@
       <dt><strong><%= Bonus.human_attribute_name(:annual) %>:</strong></dt>
       <dd><%= @employee.bonus.annual %></dd>
       <dt><strong><%= Bonus.human_attribute_name(:granted_at) %>:</strong></dt>
-      <dd><%= time_output @employee.bonus.granted_at %></dd>
+      <dd><%= date_output @employee.bonus.granted_at %></dd>
       <dt><strong><%= Bonus.human_attribute_name(:sponsor) %>:</strong></dt>
       <dd><%= @employee.bonus.sponsor %></dd>
     </div>

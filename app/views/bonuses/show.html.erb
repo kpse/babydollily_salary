@@ -11,7 +11,7 @@
   <dt><strong><%= model_class.human_attribute_name(:annual) %>:</strong></dt>
   <dd><%= @bonus.annual %></dd>
   <dt><strong><%= model_class.human_attribute_name(:granted_at) %>:</strong></dt>
-  <dd><%= time_output @bonus.granted_at %></dd>
+  <dd><%= date_output @bonus.granted_at %></dd>
   <dt><strong><%= model_class.human_attribute_name(:sponsor) %>:</strong></dt>
   <dd><%= @bonus.sponsor %></dd>
 </dl>
