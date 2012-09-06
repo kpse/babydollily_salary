@@ -6,16 +6,16 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:employee_id) %></th>
-      <th><%= model_class.human_attribute_name(:basic) %></th>
-      <th><%= model_class.human_attribute_name(:post) %></th>
-      <th><%= model_class.human_attribute_name(:compensation) %></th>
-      <th><%= model_class.human_attribute_name(:seniority_allowance) %></th>
-      <th><%= model_class.human_attribute_name(:communication_allowance) %></th>
-      <th><%= model_class.human_attribute_name(:accommodation_allowance) %></th>
-      <th><%= model_class.human_attribute_name(:transportation_allowance) %></th>
-      <th><%= model_class.human_attribute_name(:monthly_wages_standard) %></th>
-      <th><%= model_class.human_attribute_name(:travel_allowance) %></th>
-      <th><%= model_class.human_attribute_name(:monthly_total) %></th>
+      <th><%= sortable :basic, model_class %></th>
+      <th><%= sortable :post, model_class %></th>
+      <th><%= sortable :compensation, model_class %></th>
+      <th><%= sortable :seniority_allowance, model_class %></th>
+      <th><%= sortable :communication_allowance, model_class %></th>
+      <th><%= sortable :accommodation_allowance, model_class %></th>
+      <th><%= sortable :transportation_allowance, model_class %></th>
+      <th><%= sortable :monthly_wages_standard, model_class %></th>
+      <th><%= sortable :travel_allowance, model_class %></th>
+      <th><%= sortable :monthly_total, model_class %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>

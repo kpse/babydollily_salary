@@ -1,4 +1,9 @@
 class EmployeesController < ApplicationController
+
+  def model_class
+    Employee
+  end
+
   # GET /employees
   # GET /employees.json
   def index

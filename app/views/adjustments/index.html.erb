@@ -6,18 +6,18 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:employee_id) %></th>
-      <th><%= model_class.human_attribute_name(:jan) %></th>
-      <th><%= model_class.human_attribute_name(:feb) %></th>
-      <th><%= model_class.human_attribute_name(:mar) %></th>
-      <th><%= model_class.human_attribute_name(:apr) %></th>
-      <th><%= model_class.human_attribute_name(:may) %></th>
-      <th><%= model_class.human_attribute_name(:jun) %></th>
-      <th><%= model_class.human_attribute_name(:jul) %></th>
-      <th><%= model_class.human_attribute_name(:aug) %></th>
-      <th><%= model_class.human_attribute_name(:sep) %></th>
-      <th><%= model_class.human_attribute_name(:oct) %></th>
-      <th><%= model_class.human_attribute_name(:nov) %></th>
-      <th><%= model_class.human_attribute_name(:dec) %></th>
+      <th><%= sortable :jan, model_class %></th>
+      <th><%= sortable :feb, model_class %></th>
+      <th><%= sortable :mar, model_class %></th>
+      <th><%= sortable :apr, model_class %></th>
+      <th><%= sortable :may, model_class %></th>
+      <th><%= sortable :jun, model_class %></th>
+      <th><%= sortable :jul, model_class %></th>
+      <th><%= sortable :aug, model_class %></th>
+      <th><%= sortable :sep, model_class %></th>
+      <th><%= sortable :oct, model_class %></th>
+      <th><%= sortable :nov, model_class %></th>
+      <th><%= sortable :dec, model_class %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>

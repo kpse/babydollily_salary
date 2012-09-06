@@ -1,8 +1,12 @@
 class AdjustmentsController < ApplicationController
+
+  def model_class
+    Adjustment
+  end
   # GET /adjustments
   # GET /adjustments.json
   def index
-    @adjustments = Adjustment.all
+    @adjustments = Adjustment.order(sort_column + ' ' + sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb

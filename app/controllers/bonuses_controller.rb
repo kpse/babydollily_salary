@@ -1,8 +1,13 @@
 class BonusesController < ApplicationController
+
+  def model_class
+    Bonus
+  end
+
   # GET /bonuses
   # GET /bonuses.json
   def index
-    @bonuses = Bonus.all
+    @bonuses = Bonus.order(sort_column + ' ' + sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb

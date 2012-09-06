@@ -6,10 +6,10 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:employee_id) %></th>
-      <th><%= model_class.human_attribute_name(:project) %></th>
-      <th><%= model_class.human_attribute_name(:annual) %></th>
-      <th><%= model_class.human_attribute_name(:granted_at) %></th>
-      <th><%= model_class.human_attribute_name(:sponsor) %></th>
+      <th><%= sortable :project, model_class %></th>
+      <th><%= sortable :annual, model_class %></th>
+      <th><%= sortable :granted_at, model_class %></th>
+      <th><%= sortable :sponsor, model_class %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>

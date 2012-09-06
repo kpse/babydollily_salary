@@ -1,8 +1,13 @@
 class WagesController < ApplicationController
+
+  def model_class
+    Wage
+  end
+
   # GET /wages
   # GET /wages.json
   def index
-    @wages = Wage.all
+    @wages = Wage.order(sort_column + ' ' + sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,4 +85,5 @@ class WagesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 end
