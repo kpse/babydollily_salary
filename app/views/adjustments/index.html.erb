@@ -24,7 +24,7 @@
   <tbody>
     <% @adjustments.each do |adjustment| %>
       <tr>
-        <td><%= link_to adjustment.employee.full_name, edit_adjustment_path(adjustment) %></td>
+        <td><%= link_to adjustment.employee.full_name, employee_path(adjustment.employee) %></td>
         <td><%= adjustment.jan %></td>
         <td><%= adjustment.feb %></td>
         <td><%= adjustment.mar %></td>

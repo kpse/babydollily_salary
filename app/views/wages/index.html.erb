@@ -22,7 +22,7 @@
   <tbody>
     <% @wages.each do |wage| %>
       <tr>
-        <td><%= link_to wage.employee.full_name, edit_wage_path(wage) %></td>
+        <td><%= link_to wage.employee.full_name, employee_path(wage.employee) %></td>
         <td><%= wage.basic %></td>
         <td><%= wage.post %></td>
         <td><%= wage.compensation %></td>

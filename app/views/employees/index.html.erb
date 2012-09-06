@@ -2,6 +2,14 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human %></h1>
 </div>
+<%= search_form_for @search do |f| %>
+  <%= f.condition_fields do |c| %>
+    <%= render "condition_fields", f: c%>
+  <% end %>
+  <p><%= link_to_add_fields "Add Conditions", f, :condition %></p>
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+<% end %>
+
 <table class="table table-striped">
   <thead>
     <tr>

@@ -7,7 +7,9 @@ class EmployeesController < ApplicationController
   # GET /employees
   # GET /employees.json
   def index
-    @employees = Employee.all
+    @search = Employee.search(params[:q])
+    @employees = @search.result
+    @search.build_condition
 
     respond_to do |format|
       format.html # index.html.erb
