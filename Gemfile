@@ -17,7 +17,7 @@ group :assets do
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
-  gem 'haml-rails'
+
   gem 'coffee-filter'
   gem 'uglifier', '>= 1.0.3'
   gem 'twitter-bootstrap-rails'
@@ -39,5 +39,5 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
-
+gem 'haml-rails'
 gem 'ransack'
