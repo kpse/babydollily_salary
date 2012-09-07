@@ -1,0 +1,29 @@
+!!!
+%html
+  %head
+    %title Salary
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.brand{:href => "#"} Babydollily薪酬系统
+          .nav-collapse
+            %ul.nav
+              %li= link_to "员工信息", employees_path
+              %li= link_to "工资记录", wages_path
+              %li= link_to "奖金记录", bonuses_path
+              %li= link_to "调薪记录", adjustments_path
+    .container
+      .row
+        .span1
+        .span12
+          = render :partial => 'common/flashes'
+          = yield
+        .span1

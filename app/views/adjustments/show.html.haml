@@ -1,0 +1,75 @@
+- model_class = Adjustment
+.page-header
+  %h1= t '.title', :default => model_class.model_name.human
+%dl.dl-horizontal
+  %dt
+    %strong
+      = model_class.human_attribute_name(:employee_id)
+      \:
+  %dd= @adjustment.employee.full_name
+  %dt
+    %strong
+      = model_class.human_attribute_name(:jan)
+      \:
+  %dd= @adjustment.jan
+  %dt
+    %strong
+      = model_class.human_attribute_name(:feb)
+      \:
+  %dd= @adjustment.feb
+  %dt
+    %strong
+      = model_class.human_attribute_name(:mar)
+      \:
+  %dd= @adjustment.mar
+  %dt
+    %strong
+      = model_class.human_attribute_name(:apr)
+      \:
+  %dd= @adjustment.apr
+  %dt
+    %strong
+      = model_class.human_attribute_name(:may)
+      \:
+  %dd= @adjustment.may
+  %dt
+    %strong
+      = model_class.human_attribute_name(:jun)
+      \:
+  %dd= @adjustment.jun
+  %dt
+    %strong
+      = model_class.human_attribute_name(:jul)
+      \:
+  %dd= @adjustment.jul
+  %dt
+    %strong
+      = model_class.human_attribute_name(:aug)
+      \:
+  %dd= @adjustment.aug
+  %dt
+    %strong
+      = model_class.human_attribute_name(:sep)
+      \:
+  %dd= @adjustment.sep
+  %dt
+    %strong
+      = model_class.human_attribute_name(:oct)
+      \:
+  %dd= @adjustment.oct
+  %dt
+    %strong
+      = model_class.human_attribute_name(:nov)
+      \:
+  %dd= @adjustment.nov
+  %dt
+    %strong
+      = model_class.human_attribute_name(:dec)
+      \:
+  %dd= @adjustment.dec
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), |
+    adjustments_path, :class => 'btn'                        |
+  -#
+  = link_to t('.edit', :default => t("helpers.links.edit")), |
+    edit_adjustment_path(@adjustment), :class => 'btn'       |

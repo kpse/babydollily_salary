@@ -1,0 +1,48 @@
+- model_class = Employee
+.page-header
+  .row
+    .span10
+      %h1= t '.title', :default => model_class.model_name.human
+    .span2
+      = link_to "导出Excel", employees_path(params.merge(format: 'xls')), :class => 'btn btn-primary export-xls'
+= search_form_for @search do |f|
+  = f.condition_fields do |c|
+    = render "condition_fields", f: c
+  %p= link_to_add_fields "Add Conditions", f, :condition
+  = f.submit nil, :class => 'btn btn-primary'
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:number)
+      %th= model_class.human_attribute_name(:name)
+      %th= model_class.human_attribute_name(:line_of_business)
+      %th= model_class.human_attribute_name(:dug)
+      %th= model_class.human_attribute_name(:du)
+      %th= model_class.human_attribute_name(:post)
+      %th= model_class.human_attribute_name(:duty)
+      %th= model_class.human_attribute_name(:charge_area)
+      %th= model_class.human_attribute_name(:client_rank)
+      %th= t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @employees.each do |employee|
+      %tr
+        %td= link_to employee.number, employee_path(employee)
+        %td= link_to employee.name, employee_path(employee)
+        %td= employee.line_of_business
+        %td= employee.dug
+        %td= employee.du
+        %td= employee.post
+        %td= employee.duty
+        %td= employee.charge_area
+        %td= employee.client_rank
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), |
+            edit_employee_path(employee), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")),                                             |
+            employee_path(employee),                                                                                   |
+            :method => :delete,                                                                                        |
+            :data => {:confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?'))}, |
+            :class => 'btn btn-mini btn-danger'
+= link_to t('.new', :default => t("helpers.links.new")), |
+  new_employee_path,                                     |
+  :class => 'btn btn-primary'                            |

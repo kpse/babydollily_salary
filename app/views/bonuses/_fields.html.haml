@@ -1,0 +1,16 @@
+.control-group
+  = f.label :project, :class => 'control-label'
+  .controls
+    = f.text_field :project, :class => 'text_field'
+.control-group
+  = f.label :annual, :class => 'control-label'
+  .controls
+    = f.text_field :annual, :class => 'text_field'
+.control-group
+  = f.label :granted_at, :class => 'control-label'
+  .controls
+    = f.date_select :granted_at, :class => 'date_select'
+.control-group
+  = f.label :sponsor, :class => 'control-label'
+  .controls
+    = f.text_field :sponsor, :class => 'text_field'

@@ -1,0 +1,35 @@
+- model_class = Wage
+.page-header
+  %h1= t '.title', :default => model_class.model_name.human
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:employee_id)
+      %th= sortable :basic, model_class
+      %th= sortable :post, model_class
+      %th= sortable :compensation, model_class
+      %th= sortable :seniority_allowance, model_class
+      %th= sortable :communication_allowance, model_class
+      %th= sortable :accommodation_allowance, model_class
+      %th= sortable :transportation_allowance, model_class
+      %th= sortable :monthly_wages_standard, model_class
+      %th= sortable :travel_allowance, model_class
+      %th= sortable :monthly_total, model_class
+      %th= t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @wages.each do |wage|
+      %tr
+        %td= link_to wage.employee.full_name, employee_path(wage.employee)
+        %td= wage.basic
+        %td= wage.post
+        %td= wage.compensation
+        %td= wage.seniority_allowance
+        %td= wage.communication_allowance
+        %td= wage.accommodation_allowance
+        %td= wage.transportation_allowance
+        %td= wage.monthly_wages_standard
+        %td= wage.travel_allowance
+        %td= wage.monthly_total
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), |
+            edit_wage_path(wage), :class => 'btn btn-primary'        |
