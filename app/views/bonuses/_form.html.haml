@@ -4,7 +4,7 @@
     .controls
       = f.label @bonus.employee.full_name, :class => 'text_field employee-full-name'
       = f.hidden_field :employee_id
-  = render :partial => 'fields', locals: {f: f}
+  = render :partial => 'fields', locals: {f: f, bonus: @bonus}
   .form-actions
     = f.submit nil, :class => 'btn btn-primary'
     = link_to t('.cancel', :default => t("helpers.links.cancel")), |

@@ -47,7 +47,7 @@
       = f.fields_for :bonus do |builder|
         %fieldset
           %h3 奖金信息
-          = render 'bonuses/fields', f: builder
+          = render 'bonuses/fields', f: builder, bonus: @employee.bonus
   .row
     = f.fields_for :adjustment do |builder|
       %fieldset

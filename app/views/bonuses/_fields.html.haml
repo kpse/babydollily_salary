@@ -9,7 +9,7 @@
 .control-group
   = f.label :granted_at, :class => 'control-label'
   .controls
-    = f.date_select :granted_at, :class => 'date_select'
+    = f.text_field :granted_at, id: 'datepicker', value: date_export(bonus.granted_at)
 .control-group
   = f.label :sponsor, :class => 'control-label'
   .controls
