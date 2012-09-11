@@ -18,7 +18,9 @@ module ApplicationHelper
 
   def filter_fields fields
     #<option value="id">Id</option>
-    fields.gsub("\n", "").gsub(/<option value="\w*?id">.+?<\/option>/, "").gsub(/<option value="\w+?_at">.+?<\/option>/, "").
+    #<option value="created_at">created at</option>
+    #<option value="line_of_business">LOB</option>
+    fields.gsub(/<option value="\w*?id">.+?<\/option>/, "").gsub(/<option value="\w+?_at">.+?<\/option>/, "").
         gsub(/<option value="line_of_business">.+?<\/option>/, "")
   end
 
