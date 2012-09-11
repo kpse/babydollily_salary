@@ -2,6 +2,11 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
+filter_condition = ->
+  $('.condition_fields option[value$="id"], .condition_fields option[value$="_at"]').remove()
+  $('.condition_fields option[value$="line_of_business"]').remove()
+
+
 jQuery ->
   $('.remove_fields').on 'click', (event) ->
     $(this).closest('.field').remove()
@@ -24,3 +29,6 @@ jQuery ->
         for i, du of all_dus
           html += "<option>#{du}</option>"
         $('#employee_du').html(html)
+
+  filter_condition()
+
