@@ -3,11 +3,11 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 jQuery ->
-  $('form').on 'click', '.remove_fields', (event) ->
+  $('.remove_fields').on 'click', (event) ->
     $(this).closest('.field').remove()
     event.preventDefault()
 
-  $('form').on 'click', '.add_fields', (event) ->
+  $('.add_fields').on 'click', (event) ->
     time = new Date().getTime()
     regexp = new RegExp($(this).data('id'), 'g')
     $(this).before($(this).data('fields').replace(regexp, time))
@@ -24,6 +24,3 @@ jQuery ->
         for i, du of all_dus
           html += "<option>#{du}</option>"
         $('#employee_du').html(html)
-
-  $('.condition_fields option[value$="id"], .condition_fields option[value$="_at"]').remove()
-  $('.condition_fields option[value$="line_of_business"]').remove()
