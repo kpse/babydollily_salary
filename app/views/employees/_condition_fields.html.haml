@@ -1,7 +1,11 @@
 .field
   = f.attribute_fields do |a|
-    = a.attribute_select({associations: [:wage, :bonus, :adjustment]}, {class: "input-medium"})
-  = f.predicate_select
+    = a.attribute_select({associations: [:wage, :bonus, :adjustment]}, {class: "input-medium condition_fields"})
+  = f.predicate_select only: lambda {|x| not (x.end_with? 'any' or  x.end_with? 'all') }
   = f.value_fields do |v|
     = v.text_field :value, class: 'input-large'
   = link_to "remove", '#', class: "remove_fields"
+
+:coffeescript
+  $ ->
+    $('.condition_fields option[value$="id"], .condition_fields option[value$="_at"]').remove()
