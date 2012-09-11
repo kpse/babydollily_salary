@@ -8,8 +8,8 @@
       %h3 个人基本信息
       = f.input :number
       = f.input :name
-      = f.input :dug
-      = f.input :du
+      = f.input :dug, collection: all_dugs, include_blank: false, input_html: {'url' => du_query_path}
+      = f.input :du, collection: all_du(all_dugs.first), include_blank: false
       = f.input :post
       = f.input :duty
       = f.input :charge_area

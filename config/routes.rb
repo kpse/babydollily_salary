@@ -1,4 +1,6 @@
 Salary::Application.routes.draw do
+  post "du/query"
+
   resources :bonuses, except: [:destroy]
 
   resources :adjustments, except: [:destroy]
