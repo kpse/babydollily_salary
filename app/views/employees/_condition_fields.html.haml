@@ -5,7 +5,3 @@
   = f.value_fields do |v|
     = v.text_field :value, class: 'input-large'
   = link_to "remove", '#', class: "remove_fields"
-
-:coffeescript
-  $ ->
-    $('.condition_fields option[value$="id"], .condition_fields option[value$="_at"]').remove()

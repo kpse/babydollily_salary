@@ -25,3 +25,5 @@ jQuery ->
           html += "<option>#{du}</option>"
         $('#employee_du').html(html)
 
+  $('.condition_fields option[value$="id"], .condition_fields option[value$="_at"]').remove()
+  $('.condition_fields option[value$="line_of_business"]').remove()
