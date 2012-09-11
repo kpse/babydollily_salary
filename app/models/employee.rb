@@ -1,5 +1,5 @@
 class Employee < ActiveRecord::Base
-  attr_accessible :charge_area, :client_rank, :du, :dug, :duty, :line_of_business, :name, :number, :post,
+  attr_accessible :charge_area, :client_rank, :du, :dug, :duty, :name, :number, :post,
                   :wage_attributes, :adjustment_attributes, :bonus_attributes
   attr_readonly :full_name
   has_one :wage, :dependent => :destroy

@@ -15,7 +15,6 @@
     %tr
       %th= model_class.human_attribute_name(:number)
       %th= model_class.human_attribute_name(:name)
-      %th= model_class.human_attribute_name(:line_of_business)
       %th= model_class.human_attribute_name(:dug)
       %th= model_class.human_attribute_name(:du)
       %th= model_class.human_attribute_name(:post)
@@ -28,7 +27,6 @@
       %tr
         %td= link_to employee.number, employee_path(employee)
         %td= link_to employee.name, employee_path(employee)
-        %td= employee.line_of_business
         %td= employee.dug
         %td= employee.du
         %td= employee.post
