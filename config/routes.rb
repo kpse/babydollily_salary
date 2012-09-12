@@ -9,6 +9,8 @@ Salary::Application.routes.draw do
 
   resources :employees
 
+  resource :employee_data
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

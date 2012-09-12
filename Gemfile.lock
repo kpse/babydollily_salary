@@ -102,6 +102,7 @@ GEM
       polyamorous (~> 0.5.0)
     rdoc (3.12)
       json (~> 1.4)
+    ruby-ole (1.2.11.4)
     sass (3.2.1)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
@@ -110,6 +111,8 @@ GEM
     simple_form (2.0.2)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
+    spreadsheet (0.7.3)
+      ruby-ole (>= 1.0)
     sprockets (2.1.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -144,5 +147,6 @@ DEPENDENCIES
   ransack
   sass-rails (~> 3.2.3)
   simple_form
+  spreadsheet
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
