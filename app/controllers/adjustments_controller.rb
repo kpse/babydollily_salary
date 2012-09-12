@@ -6,7 +6,7 @@ class AdjustmentsController < ApplicationController
   # GET /adjustments
   # GET /adjustments.json
   def index
-    @adjustments = Adjustment.order(sort_column + ' ' + sort_direction)
+    @adjustments = Adjustment.order(sort_column + ' ' + sort_direction).page(params[:page]).per_page(50)
 
     respond_to do |format|
       format.html # index.html.erb

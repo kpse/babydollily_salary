@@ -7,7 +7,7 @@ class WagesController < ApplicationController
   # GET /wages
   # GET /wages.json
   def index
-    @wages = Wage.order(sort_column + ' ' + sort_direction)
+    @wages = Wage.order(sort_column + ' ' + sort_direction).page(params[:page]).per_page(50)
 
     respond_to do |format|
       format.html # index.html.erb

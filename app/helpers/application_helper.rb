@@ -4,7 +4,7 @@ module ApplicationHelper
     sort_class = {'asc' => 'icon-chevron-up', 'desc' => 'icon-chevron-down' }
     css_class = (column.to_s == sort_column) ? "current #{sort_class[sort_direction]}" : nil
     direction = (column.to_s == sort_column && sort_direction == "asc") ? "desc" : "asc"
-    link_to title, {:sort => column, :direction => direction},  {:class => css_class}
+    link_to title, params.merge({:sort => column, :direction => direction}),  {:class => css_class}
   end
 
   def link_to_add_fields(name, f, type)

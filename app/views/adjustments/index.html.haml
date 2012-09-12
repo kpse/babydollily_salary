@@ -1,6 +1,8 @@
 - model_class = Adjustment
 .page-header
   %h1= t '.title', :default => model_class.model_name.human
+
+= render partial: 'shared/pagination', locals: {collection: @adjustments}
 %table.table.table-striped
   %thead
     %tr

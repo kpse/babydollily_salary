@@ -1,4 +1,4 @@
-= simple_form_for(@employee_data, :url => employee_data_path(@employee_data), :html => { :class => 'form-horizontal' }) do |f|
+= simple_form_for(@employee_data, validate: true, :url => employee_data_path(@employee_data), :html => { :class => 'form-horizontal' }) do |f|
   = f.file_field :file, :label => '请上传需要导入的数据：'
   .form-actions
-    = f.submit "导入", :class => 'btn btn-primary'
+    = f.submit "导入", :class => 'btn btn-primary import-data'

@@ -8,7 +8,7 @@ class EmployeesController < ApplicationController
   # GET /employees.json
   def index
     @search = Employee.search(params[:q])
-    @employees = @search.result.order(sort_column + ' ' + sort_direction)
+    @employees = @search.result.order(sort_column + ' ' + sort_direction).page(params[:page]).per_page(50)
     @search.build_condition
 
     respond_to do |format|
