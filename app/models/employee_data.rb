@@ -6,8 +6,8 @@ class EmployeeData < ActiveRecord::Base
     book = Spreadsheet.open file_io
     p book.worksheets
     sheet1 = book.worksheet 0
+    sheet1.shift
     sheet1.each do |row|
-      # do something interesting with a row
       Employee.fetch_data row
     end
 
