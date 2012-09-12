@@ -16,45 +16,46 @@ class Employee < ActiveRecord::Base
 
   def self.fetch_data data
     @employee = find_or_create_by_number data[0].to_i.to_s
-    @employee.name =  data[1]
-    @employee.dug =  data[2]
-    @employee.du =  data[3]
-    @employee.post =  data[4]
-    @employee.duty =  data[5]
-    @employee.charge_area =  data[6]
-    @employee.client_rank =  data[7]
+    @employee.name = data[1] if data[1].present?
+    @employee.name ||= @employee.number
+    @employee.dug = data[2] if data[2].present?
+    @employee.du = data[3] if data[3].present?
+    @employee.post = data[4] if data[4].present?
+    @employee.duty = data[5] if data[5].present?
+    @employee.charge_area = data[6] if data[6].present?
+    @employee.client_rank = data[7] if data[7].present?
 
     @employee.wage ||= Wage.new
-    @employee.wage.basic = data[8]
-    @employee.wage.post = data[9]
-    @employee.wage.compensation = data[10]
-    @employee.wage.seniority_allowance = data[11]
-    @employee.wage.communication_allowance = data[12]
-    @employee.wage.accommodation_allowance = data[13]
-    @employee.wage.transportation_allowance = data[14]
-    @employee.wage.monthly_wages_standard = data[15]
-    @employee.wage.travel_allowance = data[16]
-    @employee.wage.monthly_total = data[17]
+    @employee.wage.basic = data[8] if data[8].present?
+    @employee.wage.post = data[9] if data[9].present?
+    @employee.wage.compensation = data[10] if data[10].present?
+    @employee.wage.seniority_allowance = data[11] if data[11].present?
+    @employee.wage.communication_allowance = data[12] if data[12].present?
+    @employee.wage.accommodation_allowance = data[13] if data[13].present?
+    @employee.wage.transportation_allowance = data[14] if data[14].present?
+    @employee.wage.monthly_wages_standard = data[15] if data[15].present?
+    @employee.wage.travel_allowance = data[16] if data[16].present?
+    @employee.wage.monthly_total = data[17] if data[17].present?
 
     @employee.bonus ||= Bonus.new
-    @employee.bonus.project = data[18]
-    @employee.bonus.granted_at = data[19]
-    @employee.bonus.annual = data[20]
-    @employee.bonus.sponsor = data[21]
+    @employee.bonus.project = data[18] if data[18].present?
+    @employee.bonus.granted_at = data[19] if data[19].present?
+    @employee.bonus.annual = data[20] if data[20].present?
+    @employee.bonus.sponsor = data[21] if data[21].present?
 
     @employee.adjustment ||= Adjustment.new
-    @employee.adjustment.jan = data[22]
-    @employee.adjustment.feb = data[23]
-    @employee.adjustment.mar = data[24]
-    @employee.adjustment.apr = data[25]
-    @employee.adjustment.may = data[26]
-    @employee.adjustment.jun = data[27]
-    @employee.adjustment.jul = data[28]
-    @employee.adjustment.aug = data[29]
-    @employee.adjustment.sep = data[30]
-    @employee.adjustment.oct = data[31]
-    @employee.adjustment.nov = data[32]
-    @employee.adjustment.dec = data[33]
+    @employee.adjustment.jan = data[22] if data[22].present?
+    @employee.adjustment.feb = data[23] if data[23].present?
+    @employee.adjustment.mar = data[24] if data[24].present?
+    @employee.adjustment.apr = data[25] if data[25].present?
+    @employee.adjustment.may = data[26] if data[26].present?
+    @employee.adjustment.jun = data[27] if data[27].present?
+    @employee.adjustment.jul = data[28] if data[28].present?
+    @employee.adjustment.aug = data[29] if data[29].present?
+    @employee.adjustment.sep = data[30] if data[30].present?
+    @employee.adjustment.oct = data[31] if data[31].present?
+    @employee.adjustment.nov = data[32] if data[32].present?
+    @employee.adjustment.dec = data[33] if data[33].present?
 
     @employee.save
   end
