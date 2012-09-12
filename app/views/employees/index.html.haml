@@ -13,14 +13,14 @@
 %table.table.table-striped
   %thead
     %tr
-      %th= model_class.human_attribute_name(:number)
-      %th= model_class.human_attribute_name(:name)
-      %th= model_class.human_attribute_name(:dug)
-      %th= model_class.human_attribute_name(:du)
-      %th= model_class.human_attribute_name(:post)
-      %th= model_class.human_attribute_name(:duty)
-      %th= model_class.human_attribute_name(:charge_area)
-      %th= model_class.human_attribute_name(:client_rank)
+      %th= sortable :number, model_class
+      %th= sortable :name, model_class
+      %th= sortable :dug, model_class
+      %th= sortable :du, model_class
+      %th= sortable :post, model_class
+      %th= sortable :duty, model_class
+      %th= sortable :charge_area, model_class
+      %th= sortable :client_rank, model_class
       %th= t '.actions', :default => t("helpers.actions")
   %tbody
     - @employees.each do |employee|

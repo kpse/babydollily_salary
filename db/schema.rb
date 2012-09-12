@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120912144851) do
+ActiveRecord::Schema.define(:version => 20120912162411) do
 
   create_table "adjustments", :force => true do |t|
     t.integer  "employee_id"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(:version => 20120912144851) do
     t.datetime "updated_at",                   :null => false
   end
 
+  add_index "adjustments", ["employee_id"], :name => "adjustments_employee_index"
+
   create_table "bonuses", :force => true do |t|
     t.integer  "employee_id"
     t.decimal  "project",     :default => 0.0
@@ -40,6 +42,8 @@ ActiveRecord::Schema.define(:version => 20120912144851) do
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
   end
+
+  add_index "bonuses", ["employee_id"], :name => "bonuses_employee_index"
 
   create_table "employee_data", :force => true do |t|
     t.string   "file"
@@ -61,6 +65,8 @@ ActiveRecord::Schema.define(:version => 20120912144851) do
     t.datetime "updated_at",       :null => false
   end
 
+  add_index "employees", ["number"], :name => "number_index"
+
   create_table "wages", :force => true do |t|
     t.integer  "employee_id"
     t.decimal  "basic",                    :default => 0.0
@@ -76,5 +82,7 @@ ActiveRecord::Schema.define(:version => 20120912144851) do
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
   end
+
+  add_index "wages", ["employee_id"], :name => "wages_employee_index"
 
 end
