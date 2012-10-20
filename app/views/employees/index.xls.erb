@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+          xmlns:o="urn:schemas-microsoft-com:office:office"
+          xmlns:x="urn:schemas-microsoft-com:office:excel"
+          xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+          xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Salary">
+    <Table>
+      <Column/>
+      <Row>
+        <Cell><Data ss:Type="String">工号</Data></Cell>
+        <Cell><Data ss:Type="String">姓名</Data></Cell>
+        <Cell><Data ss:Type="String">DUG</Data></Cell>
+        <Cell><Data ss:Type="String">DU</Data></Cell>
+        <Cell><Data ss:Type="String">岗位</Data></Cell>
+        <Cell><Data ss:Type="String">职务</Data></Cell>
+        <Cell><Data ss:Type="String">管辖地域</Data></Cell>
+        <Cell><Data ss:Type="String">客户定级</Data></Cell>
+        <Cell><Data ss:Type="String">基本工资</Data></Cell>
+        <Cell><Data ss:Type="String">岗位工资</Data></Cell>
+        <Cell><Data ss:Type="String">补偿金</Data></Cell>
+        <Cell><Data ss:Type="String">工龄补贴</Data></Cell>
+        <Cell><Data ss:Type="String">通讯补助</Data></Cell>
+        <Cell><Data ss:Type="String">房屋补助</Data></Cell>
+        <Cell><Data ss:Type="String">交通补助</Data></Cell>
+        <Cell><Data ss:Type="String">月工资标准</Data></Cell>
+        <Cell><Data ss:Type="String">出差补助额</Data></Cell>
+        <Cell><Data ss:Type="String">工资</Data></Cell>
+        <Cell><Data ss:Type="String">项目奖金</Data></Cell>
+        <Cell><Data ss:Type="String">项目奖金发放日期</Data></Cell>
+        <Cell><Data ss:Type="String">年终奖金</Data></Cell>
+        <Cell><Data ss:Type="String">奖金评定人</Data></Cell>
+        <Cell><Data ss:Type="String">1月调薪额</Data></Cell>
+        <Cell><Data ss:Type="String">2月调薪额</Data></Cell>
+        <Cell><Data ss:Type="String">3月调薪额</Data></Cell>
+        <Cell><Data ss:Type="String">4月调薪额</Data></Cell>
+        <Cell><Data ss:Type="String">5月调薪额</Data></Cell>
+        <Cell><Data ss:Type="String">6月调薪额</Data></Cell>
+        <Cell><Data ss:Type="String">7月调薪额</Data></Cell>
+        <Cell><Data ss:Type="String">8月调薪额</Data></Cell>
+        <Cell><Data ss:Type="String">9月调薪额</Data></Cell>
+        <Cell><Data ss:Type="String">10月调薪额</Data></Cell>
+        <Cell><Data ss:Type="String">11月调薪额</Data></Cell>
+        <Cell><Data ss:Type="String">12月调薪额</Data></Cell>
+      </Row>
+      <% @employees.each do |employee| %>
+        <Row>
+          <Cell><Data ss:Type="String"><%= employee.number %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= employee.name %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= employee.dug %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= employee.du %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= employee.post %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= employee.duty %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= employee.charge_area %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= employee.client_rank %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= employee.wage.basic %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= employee.wage.post %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= employee.wage.compensation %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= employee.wage.seniority_allowance %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= employee.wage.communication_allowance %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= employee.wage.accommodation_allowance %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= employee.wage.transportation_allowance %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= employee.wage.monthly_wages_standard %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= employee.wage.travel_allowance %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= employee.wage.monthly_total %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= employee.bonus.project %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= date_export employee.bonus.granted_at %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= employee.bonus.annual %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= employee.bonus.sponsor %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= employee.adjustment.jan %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= employee.adjustment.feb %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= employee.adjustment.mar %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= employee.adjustment.apr %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= employee.adjustment.may %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= employee.adjustment.jun %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= employee.adjustment.jul %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= employee.adjustment.aug %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= employee.adjustment.sep %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= employee.adjustment.oct %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= employee.adjustment.nov %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= employee.adjustment.dec %></Data></Cell>
+
+        </Row>
+      <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

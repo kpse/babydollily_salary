@@ -1,0 +1,41 @@
+- model_class = Adjustment
+.page-header
+  %h1= t '.title', :default => model_class.model_name.human
+
+= render partial: 'shared/pagination', locals: {collection: @adjustments}
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:employee_id)
+      %th= sortable :jan, model_class
+      %th= sortable :feb, model_class
+      %th= sortable :mar, model_class
+      %th= sortable :apr, model_class
+      %th= sortable :may, model_class
+      %th= sortable :jun, model_class
+      %th= sortable :jul, model_class
+      %th= sortable :aug, model_class
+      %th= sortable :sep, model_class
+      %th= sortable :oct, model_class
+      %th= sortable :nov, model_class
+      %th= sortable :dec, model_class
+      %th= t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @adjustments.each do |adjustment|
+      %tr
+        %td= link_to adjustment.employee.full_name, employee_path(adjustment.employee)
+        %td= adjustment.jan
+        %td= adjustment.feb
+        %td= adjustment.mar
+        %td= adjustment.apr
+        %td= adjustment.may
+        %td= adjustment.jun
+        %td= adjustment.jul
+        %td= adjustment.aug
+        %td= adjustment.sep
+        %td= adjustment.oct
+        %td= adjustment.nov
+        %td= adjustment.dec
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")),      |
+            edit_adjustment_path(adjustment), :class => 'btn btn-primary' |

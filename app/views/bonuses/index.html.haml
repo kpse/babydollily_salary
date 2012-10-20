@@ -1,0 +1,25 @@
+- model_class = Bonus
+.page-header
+  %h1= t '.title', :default => model_class.model_name.human
+
+= render partial: 'shared/pagination', locals: {collection: @bonuses}
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:employee_id)
+      %th= sortable :project, model_class
+      %th= sortable :annual, model_class
+      %th= sortable :granted_at, model_class
+      %th= sortable :sponsor, model_class
+      %th= t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @bonuses.each do |bonus|
+      %tr
+        %td= link_to bonus.employee.full_name, employee_path(bonus.employee)
+        %td= bonus.project
+        %td= bonus.annual
+        %td= date_output bonus.granted_at
+        %td= bonus.sponsor
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), |
+            edit_bonus_path(bonus), :class => 'btn btn-primary'      |

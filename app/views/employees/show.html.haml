@@ -1,0 +1,191 @@
+- model_class = Employee
+.page-header
+  %h1= t '.title', :default => model_class.model_name.human
+%dl.dl-horizontal
+  .row.employee-info
+    .span3
+      %dt
+        %strong
+          = Employee.human_attribute_name(:number)
+          \:
+      %dd= @employee.number
+      %dt
+        %strong
+          = Employee.human_attribute_name(:name)
+          \:
+      %dd= @employee.name
+      %dt
+        %strong
+          = Employee.human_attribute_name(:dug)
+          \:
+      %dd= @employee.dug
+      %dt
+        %strong
+          = Employee.human_attribute_name(:du)
+          \:
+      %dd= @employee.du
+      %dt
+        %strong
+          = Employee.human_attribute_name(:post)
+          \:
+      %dd= @employee.post
+      %dt
+        %strong
+          = Employee.human_attribute_name(:duty)
+          \:
+      %dd= @employee.duty
+      %dt
+        %strong
+          = Employee.human_attribute_name(:charge_area)
+          \:
+      %dd= @employee.charge_area
+      %dt
+        %strong
+          = Employee.human_attribute_name(:client_rank)
+          \:
+      %dd= @employee.client_rank
+    .span3
+      %dt
+        %strong
+          = Wage.human_attribute_name(:basic)
+          \:
+      %dd= @employee.wage.basic
+      %dt
+        %strong
+          = Wage.human_attribute_name(:post)
+          \:
+      %dd= @employee.wage.post
+      %dt
+        %strong
+          = Wage.human_attribute_name(:compensation)
+          \:
+      %dd= @employee.wage.compensation
+      %dt
+        %strong
+          = Wage.human_attribute_name(:seniority_allowance)
+          \:
+      %dd= @employee.wage.seniority_allowance
+      %dt
+        %strong
+          = Wage.human_attribute_name(:communication_allowance)
+          \:
+      %dd= @employee.wage.communication_allowance
+      %dt
+        %strong
+          = Wage.human_attribute_name(:accommodation_allowance)
+          \:
+      %dd= @employee.wage.accommodation_allowance
+      %dt
+        %strong
+          = Wage.human_attribute_name(:transportation_allowance)
+          \:
+      %dd= @employee.wage.transportation_allowance
+      %dt
+        %strong
+          = Wage.human_attribute_name(:monthly_wages_standard)
+          \:
+      %dd= @employee.wage.monthly_wages_standard
+      %dt
+        %strong
+          = Wage.human_attribute_name(:travel_allowance)
+          \:
+      %dd= @employee.wage.travel_allowance
+      %dt
+        %strong
+          = Wage.human_attribute_name(:monthly_total)
+          \:
+      %dd= @employee.wage.monthly_total
+    .span3
+      %dt
+        %strong
+          = Bonus.human_attribute_name(:project)
+          \:
+      %dd= @employee.bonus.project
+      %dt
+        %strong
+          = Bonus.human_attribute_name(:annual)
+          \:
+      %dd= @employee.bonus.annual
+      %dt
+        %strong
+          = Bonus.human_attribute_name(:granted_at)
+          \:
+      %dd= date_output @employee.bonus.granted_at
+      %dt
+        %strong
+          = Bonus.human_attribute_name(:sponsor)
+          \:
+      %dd= @employee.bonus.sponsor
+    .span3
+      %dt
+        %strong
+          = Adjustment.human_attribute_name(:jan)
+          \:
+      %dd= @employee.adjustment.jan
+      %dt
+        %strong
+          = Adjustment.human_attribute_name(:feb)
+          \:
+      %dd= @employee.adjustment.feb
+      %dt
+        %strong
+          = Adjustment.human_attribute_name(:mar)
+          \:
+      %dd= @employee.adjustment.mar
+      %dt
+        %strong
+          = Adjustment.human_attribute_name(:apr)
+          \:
+      %dd= @employee.adjustment.apr
+      %dt
+        %strong
+          = Adjustment.human_attribute_name(:may)
+          \:
+      %dd= @employee.adjustment.may
+      %dt
+        %strong
+          = Adjustment.human_attribute_name(:jun)
+          \:
+      %dd= @employee.adjustment.jun
+      %dt
+        %strong
+          = Adjustment.human_attribute_name(:jul)
+          \:
+      %dd= @employee.adjustment.jul
+      %dt
+        %strong
+          = Adjustment.human_attribute_name(:aug)
+          \:
+      %dd= @employee.adjustment.aug
+      %dt
+        %strong
+          = Adjustment.human_attribute_name(:sep)
+          \:
+      %dd= @employee.adjustment.sep
+      %dt
+        %strong
+          = Adjustment.human_attribute_name(:oct)
+          \:
+      %dd= @employee.adjustment.oct
+      %dt
+        %strong
+          = Adjustment.human_attribute_name(:nov)
+          \:
+      %dd= @employee.adjustment.nov
+      %dt
+        %strong
+          = Adjustment.human_attribute_name(:dec)
+          \:
+      %dd= @employee.adjustment.dec
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), |
+    employees_path, :class => 'btn'                          |
+  -#
+  = link_to t('.edit', :default => t("helpers.links.edit")), |
+    edit_employee_path(@employee), :class => 'btn'           |
+  -#
+  = link_to t('.destroy', :default => t("helpers.links.destroy")),                                               |
+    employee_path(@employee),                                                                                    |
+    :method => 'delete',                                                                                         |
+    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, |
+    :class => 'btn btn-danger'                                                                                   |

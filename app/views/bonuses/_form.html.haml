@@ -1,0 +1,11 @@
+= simple_form_for @bonus, :html => { :class => 'form-horizontal' } do |f|
+  .control-group
+    = f.label :employee_id, :class => 'control-label'
+    .controls
+      = f.label @bonus.employee.full_name, :class => 'text_field employee-full-name'
+      = f.hidden_field :employee_id
+  = render :partial => 'fields', locals: {f: f, bonus: @bonus}
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), |
+      bonuses_path, :class => 'btn'                                |

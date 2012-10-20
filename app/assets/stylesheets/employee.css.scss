@@ -1,0 +1,19 @@
+.employee-full-name {
+  padding-top: 5px;
+}
+
+.export-xls {
+  margin-top: 15px;
+}
+
+.simple_form {
+  clear: left;
+  font-size: 12px;
+  display: block;
+  .error {
+    color: #D00;
+  }
+  .hint {
+    color: #555;
+  }
+}

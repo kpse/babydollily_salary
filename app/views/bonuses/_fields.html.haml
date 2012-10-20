@@ -1,0 +1,7 @@
+= f.input :project
+= f.input :annual
+.control-group
+  = f.label :granted_at, :class => 'control-label'
+  .controls
+    = f.text_field :granted_at, id: 'datepicker', value: date_export(bonus.granted_at), 'data-date-format' => 'yyyy-mm-dd'
+= f.input :sponsor

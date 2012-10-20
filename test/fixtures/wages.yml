@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  employee_id: 1
+  basic: 9.99
+  post: 9.99
+  compensation: 9.99
+  seniority_allowance: 9.99
+  communication_allowance: 9.99
+  accommodation_allowance: 9.99
+  transportation_allowance: 9.99
+  monthly_wages_standard: 9.99
+  travel_allowance: 9.99
+  monthly_total: 9.99
+
+two:
+  employee_id: 1
+  basic: 9.99
+  post: 9.99
+  compensation: 9.99
+  seniority_allowance: 9.99
+  communication_allowance: 9.99
+  accommodation_allowance: 9.99
+  transportation_allowance: 9.99
+  monthly_wages_standard: 9.99
+  travel_allowance: 9.99
+  monthly_total: 9.99

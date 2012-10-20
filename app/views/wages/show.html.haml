@@ -1,0 +1,65 @@
+- model_class = Wage
+.page-header
+  %h1= t '.title', :default => 'model_class.model_name.human'
+%dl.dl-horizontal
+  %dt
+    %strong
+      = model_class.human_attribute_name(:employee_id)
+      \:
+  %dd= @wage.employee.full_name
+  %dt
+    %strong
+      = model_class.human_attribute_name(:basic)
+      \:
+  %dd= @wage.basic
+  %dt
+    %strong
+      = model_class.human_attribute_name(:post)
+      \:
+  %dd= @wage.post
+  %dt
+    %strong
+      = model_class.human_attribute_name(:compensation)
+      \:
+  %dd= @wage.compensation
+  %dt
+    %strong
+      = model_class.human_attribute_name(:seniority_allowance)
+      \:
+  %dd= @wage.seniority_allowance
+  %dt
+    %strong
+      = model_class.human_attribute_name(:communication_allowance)
+      \:
+  %dd= @wage.communication_allowance
+  %dt
+    %strong
+      = model_class.human_attribute_name(:accommodation_allowance)
+      \:
+  %dd= @wage.accommodation_allowance
+  %dt
+    %strong
+      = model_class.human_attribute_name(:transportation_allowance)
+      \:
+  %dd= @wage.transportation_allowance
+  %dt
+    %strong
+      = model_class.human_attribute_name(:monthly_wages_standard)
+      \:
+  %dd= @wage.monthly_wages_standard
+  %dt
+    %strong
+      = model_class.human_attribute_name(:travel_allowance)
+      \:
+  %dd= @wage.travel_allowance
+  %dt
+    %strong
+      = model_class.human_attribute_name(:monthly_total)
+      \:
+  %dd= @wage.monthly_total
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), |
+    wages_path, :class => 'btn'                              |
+  -#
+  = link_to t('.edit', :default => t("helpers.links.edit")), |
+    edit_wage_path(@wage), :class => 'btn'                   |
